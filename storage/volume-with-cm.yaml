@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-using-cm-env
+  labels:
+    app: env
+spec:
+  containers:
+    - name: app
+      image: nginx
+      env:
+      - name: text
+        valueFrom:
+          configMapKeyRef:
+            name: colors
+            key: favorite
