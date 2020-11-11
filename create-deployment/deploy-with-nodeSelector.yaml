@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: node
+  name: node
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: node
+    spec:
+# Node1 labeled by "my" keyword
+      nodeSelector:
+        my: node1
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}

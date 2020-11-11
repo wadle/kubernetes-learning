@@ -1,0 +1,19 @@
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: quota
+  namespace: default
+data:
+  browsers.json: |
+    {
+      "chrome": {
+       "default": "83.0",
+        "versions": {
+          "83.0": {
+            "image": "selenoid/vnc_chrome:83.0",
+            "port": "4444"}
+         }
+      }
+    }
