@@ -1,3 +1,2 @@
 # kubernetes-learning
-Learn kubernetes application deployment Lifecycle
- 
+Learn kubernetes application deployment
