@@ -30,7 +30,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           commit-message: Create PR
-          branch: main
+          branch: master
           title: 'Wadle PR'
           body: |
             My demo PR
