@@ -31,7 +31,7 @@ jobs:
         with:
           base: master
           commit-message: Create PR
-          branch: create-pull-request/patch
+          branch: develop
           title: 'Wadle PR'
           body: |
             My demo
