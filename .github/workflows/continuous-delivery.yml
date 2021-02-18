@@ -33,7 +33,7 @@ jobs:
           branch: master
           title: 'Wadle PR'
           body: |
-            My demo PR
+            My demo
           labels: |
             Wadle
 
