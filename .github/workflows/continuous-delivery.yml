@@ -29,8 +29,9 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
+          base: master
           commit-message: Create PR
-          branch: master
+          branch: create-pull-request/patch
           title: 'Wadle PR'
           body: |
             My demo
