@@ -1,6 +1,5 @@
 kubernetes
 Loadbalancer
-Selenoid
 UI
 https
 io
@@ -8,4 +7,3 @@ minikube
 sigs
 Lifecycle
 wadleeeeeee
-wrongword
