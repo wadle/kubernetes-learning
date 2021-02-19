@@ -2,30 +2,17 @@ name: 'ci-with-woke-spell'
 on:
   - push
 jobs:
-  
-  # Spellcheck: 
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-      
-  #     - uses: rojopolis/spellcheck-github-actions@0.10.0
-  #       name: Spellcheck
-
-  #       with:
-  #         # Cause the check to fail on any broke rules
-  #         fail-on-error: true
-    
-  Woke:
-    
+  woke:
+    name: woke
     runs-on: ubuntu-20.04
     steps:
-      
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: woke
         uses: get-woke/woke-action@v0
         with:
           # Cause the check to fail on any broke rules
           fail-on-error: true
-
 
 
