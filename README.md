@@ -1,2 +1,2 @@
 # kubernetes-learning
-Learn kubernetes application deployment file demo master-slave
+Learn kubernetes application deployment file demo slave
