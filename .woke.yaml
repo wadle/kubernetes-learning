@@ -1,10 +1,10 @@
 rules:
-  - name: wadle
+  - name: wrongword
     terms:
-      - wadle
-      - jitendra-wadle
+      - wrongword
+      - wrongword-with
     alternatives:
-      - wadlejitu
+      - correct-word
 
 
 # ignore_files:
