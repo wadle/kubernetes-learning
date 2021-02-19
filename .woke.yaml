@@ -6,3 +6,6 @@ rules:
     alternatives:
       - wadlejitu
 
+
+ignore_files:
+  - README.md
