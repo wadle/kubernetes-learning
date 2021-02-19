@@ -1,14 +1,16 @@
-name: CI-WOKE-FLOW
+name: 'ci-with-woke-spell'
 on:
   - push
 jobs:
-  woke:
-    name: woke
+  build: 
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - uses: rojopolis/spellcheck-github-actions@0.10.0
+        name: Spellcheck
+      
       - name: woke
         uses: get-woke/woke-action@v0
         with:
