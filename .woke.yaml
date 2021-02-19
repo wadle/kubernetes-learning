@@ -7,5 +7,5 @@ rules:
       - wadlejitu
 
 
-ignore_files:
-  - README.md
+# ignore_files:
+#   - README.md
