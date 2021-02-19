@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: ng
+  name: ng
+spec:
+  tolerations:
+    # this toleration is to have the daemonset runnable on master nodes
+    # remove it if your masters can't run pods
+    - key: node-role.kubernetes.io/master
+      effect: NoSchedule
+  containers:
+  - image: nginx
+    name: ng
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
