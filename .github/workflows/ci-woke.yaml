@@ -2,8 +2,10 @@ name: 'ci-with-woke-spell'
 on:
   - push
 jobs:
-  woke:
-    name: woke
+
+  Woke:
+    
+    name: Run woke
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -17,7 +19,8 @@ jobs:
 
 
   Spellcheck:
-    name: Spellcheck
+    
+    name: Run spellcheck
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
