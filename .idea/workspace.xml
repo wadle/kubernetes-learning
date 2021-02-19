@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd675709-924d-4c80-8eed-e9f924d8f5cb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.github/workflows/continuous-delivery.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/create-deployment/deploy-with-nodeSelector.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/create-deployment/my-deployment.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/create-deployment/nodeAffinity.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/logging/add-third-party-logging-collector" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/logging/save-logs-with-logs-level" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/logging/side-car-container-to-collect-logs.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/networking/ingress-controller.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/networking/ingress.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/selenoid-setup/README-selenoid-setup.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/selenoid-setup/config.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/selenoid-setup/selenoid-and-selenoid-ui.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/selenoid-setup/selenoid-ui-service.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/storage/nfs.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/storage/pv-with-nfs-server.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/storage/pvc-with-nfs-server.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/storage/reconfigure-pvc-with-increase-storate-request.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/storage/volume-with-cm.yaml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/kubernetes-learning/storage/volume-with-secret.yaml" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/continuous-delivery.yml" afterPath="$PROJECT_DIR$/.github/workflows/continuous-delivery.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,8 +66,8 @@
       <file leaf-file-name="continuous-delivery.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.github/workflows/continuous-delivery.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+            <state relative-caret-position="374">
+              <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -727,8 +708,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.github/workflows/continuous-delivery.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        <state relative-caret-position="374">
+          <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
           <folding />
         </state>
       </provider>
