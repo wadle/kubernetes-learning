@@ -8,8 +8,8 @@ metadata:
 spec:
   tolerations:
     # this toleration is to have the daemonset runnable on master nodes
-    # remove it if your masters can't run pods
-    - key: node-role.kubernetes.io/master
+    # remove it if your masters can't run pods # wokeignore:rule=master
+    - key: node-role.kubernetes.io/master  # wokeignore:rule=master
       effect: NoSchedule
   containers:
   - image: nginx
