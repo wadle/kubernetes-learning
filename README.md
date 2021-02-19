@@ -1,2 +1,2 @@
 # kubernetes-learning
-Learn kubernetes application deployment file wrongword wadleeeeeee
+Learn kubernetes application deployment file
