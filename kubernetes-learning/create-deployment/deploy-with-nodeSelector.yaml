@@ -17,9 +17,9 @@ spec:
       labels:
         app: node
     spec:
-# Node1 labeled by "my" keyword
+# Node01 labeled by "my" keyword
       nodeSelector:
-        my: node1
+        my: node01
       containers:
       - image: nginx
         name: nginx
