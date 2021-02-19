@@ -1,2 +1,2 @@
 # kubernetes-learning
-Learn kubernetes application deployment file demo dummy
+Learn kubernetes application deployment file demo wadle
