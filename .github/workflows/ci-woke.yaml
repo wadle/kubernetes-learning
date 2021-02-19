@@ -10,6 +10,9 @@ jobs:
 
       - uses: rojopolis/spellcheck-github-actions@0.10.0
         name: Spellcheck
+        with:
+          # Cause the check to fail on any broke rules
+          fail-on-error: false
       
       - name: woke
         uses: get-woke/woke-action@v0
