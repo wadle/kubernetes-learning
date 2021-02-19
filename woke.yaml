@@ -1,0 +1,7 @@
+rules:
+  - name: whitelist
+    terms:
+      - whitelist
+      - white-list
+    alternatives:
+      - allowlist
