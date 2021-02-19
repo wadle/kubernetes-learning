@@ -1,8 +1,8 @@
 rules:
-  - name: whitelist
+  - name: wadle
     terms:
-      - whitelist
-      - white-list
+      - wadle
+      - jitendra-wadle
     alternatives:
-      - allowlist
+      - wadlejitu
 
