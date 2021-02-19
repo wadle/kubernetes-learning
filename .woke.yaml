@@ -1,10 +1,10 @@
 rules:
-  - name: wrongword
+  - name: master
     terms:
-      - wrongword
-      - wrongword-with
+      - master
+      - master-with
     alternatives:
-      - correct-word
+      - master-only
 
 
 # ignore_files:
