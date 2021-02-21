@@ -7,5 +7,5 @@ rules:
       - master-only
 
 
-# ignore_files:
-#   - nfs.yaml
+ignore_files:
+  - nfs.yaml
