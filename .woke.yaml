@@ -7,5 +7,5 @@ rules:
       - master-only
 
 
-# ignore_files:
-#   - README.md
+ignore_files:
+  - nfs.yaml
