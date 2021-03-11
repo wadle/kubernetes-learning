@@ -1,10 +1,10 @@
-rules:
-  - name: master
-    terms:
-      - master
-      - master-with
-    alternatives:
-      - master-only
+# rules:
+#   - name: master
+#     terms:
+#       - master
+#       - master-with
+#     alternatives:
+#       - master-only
 
 
 ignore_files:
