@@ -41,7 +41,7 @@ jobs:
         with:
           PATTERNS: |
             service/*_types.yaml
-        - name: FilesChanged
-          run: |
-            echo "This is GitDiff is observed"
-          if: env.GIT_DIFF
+      - name: FilesChanged
+        run: |
+          echo "This is GitDiff is observed"
+        if: env.GIT_DIFF
