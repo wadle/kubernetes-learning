@@ -28,3 +28,16 @@ jobs:
 
       - name: Spellcheck
         uses: rojopolis/spellcheck-github-actions@0.10.0
+
+  CheckFileChanges:
+    name: Run docChanges
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: GitDiff
+        uses: technote-space/get-diff-action@v4
+        with:
+          PATTERNS: |
+            service/*_types.yaml
