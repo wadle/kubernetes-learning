@@ -6,7 +6,7 @@ jobs:
   Woke:
     
     name: Run woke
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,7 +21,7 @@ jobs:
   Spellcheck:
     
     name: Run spellcheck
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -31,7 +31,7 @@ jobs:
 
   CheckFileChanges:
     name: Run docChanges
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -45,4 +45,8 @@ jobs:
       - name: FilesChanged
         run: |
           echo "This is GitDiff is observed"
-        if: env.GIT_DIFF
+        # if: env.GIT_DIFF
+      - name: GitDiff-1
+        run: |
+          shell: git diff
+
