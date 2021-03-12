@@ -40,12 +40,11 @@ jobs:
         uses: technote-space/get-diff-action@v4
         with:
           PATTERNS: |
-            service/*_types.yaml
+            services/*_types.yaml
       
       - name: FilesChanged
         run: |
           echo "This is GitDiff is observed"
           exit 1
-        if: env.GIT_DIFF == '0'
-
+        if: env.GIT_DIFF
 
