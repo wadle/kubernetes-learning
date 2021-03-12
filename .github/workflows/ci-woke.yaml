@@ -36,6 +36,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Create File 
+        run: |
+          echo "##This is update contect" > services/learn.md
+          cp services/learn.md docs/src/learn.md
+
+
       - name: GitDiff
         uses: technote-space/get-diff-action@v4
         with:
@@ -43,8 +49,6 @@ jobs:
             docs/src/learn.md
 # services/*_types.yaml
 
-
-      
       - name: FilesChanged
         run: |
           echo "This is GitDiff is observed"
