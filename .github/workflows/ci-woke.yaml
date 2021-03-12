@@ -43,8 +43,11 @@ jobs:
             +(service)/*_types.yaml
       
       - name: FilesChanged
+
         run: |
-          echo $GIT_DIFF
+          import os
+          print(os.environ['GIT_DIFF'])
+        shell: python
 
         # if: env.GIT_DIFF
       - name: GitDiff-1
