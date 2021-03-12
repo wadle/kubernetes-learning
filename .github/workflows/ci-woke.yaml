@@ -40,17 +40,12 @@ jobs:
         uses: technote-space/get-diff-action@v4
         with:
           PATTERNS: |
-            +(service)/*_types.yaml
+            service/*_types.yaml
       
       - name: FilesChanged
-
         run: |
-          import os
-          print(os.environ['GIT_DIFF'])
-        shell: python
+          echo "This is GitDiff is observed"
+          exit 1
+        if: env.GIT_DIFF == '0'
 
-        # if: env.GIT_DIFF
-      - name: GitDiff-1
-        run: |
-          git diff
 
