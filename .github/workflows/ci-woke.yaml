@@ -44,9 +44,10 @@ jobs:
       
       - name: FilesChanged
         run: |
-          echo "This is GitDiff is observed"
+          echo $GIT_DIFF
+
         # if: env.GIT_DIFF
       - name: GitDiff-1
         run: |
-          shell: git diff
+          git diff
 
