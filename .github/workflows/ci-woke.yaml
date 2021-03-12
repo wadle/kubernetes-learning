@@ -1,0 +1,48 @@
+name: 'ci-with-woke-spell'
+on:
+  - push
+jobs:
+
+  Woke:
+    
+    name: Run woke
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: woke
+        uses: get-woke/woke-action@v0
+        with:
+          # Cause the check to fail on any broke rules
+          fail-on-error: true
+
+
+  Spellcheck:
+    
+    name: Run spellcheck
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@0.10.0
+
+  CheckFileChanges:
+    name: Run docChanges
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: GitDiff
+        uses: technote-space/get-diff-action@v4
+        with:
+          PATTERNS: |
+            +(service)/*_types.yaml
+      
+      - name: FilesChanged
+        run: |
+          echo "This is GitDiff is observed"
+        if: env.GIT_DIFF

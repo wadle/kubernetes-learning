@@ -1,0 +1,11 @@
+# rules:
+#   - name: master
+#     terms:
+#       - master
+#       - master-with
+#     alternatives:
+#       - master-only
+
+
+ignore_files:
+  - nfs.yaml
