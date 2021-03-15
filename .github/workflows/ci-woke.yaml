@@ -38,7 +38,7 @@ jobs:
 
       - name: Create File 
         run: |
-          echo "##This is update contect New Updates." > services/learn.md
+          echo "##This is update contect New" > services/learn.md
           cp services/learn.md docs/src/learn.md
 
 
