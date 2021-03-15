@@ -42,6 +42,11 @@ jobs:
           cp services/learn.md docs/src/learn.md
 
 
+      - name: git-diff-command
+        run: |
+          git diff
+
+
       - name: GitDiff
         uses: technote-space/get-diff-action@v4
         with:
