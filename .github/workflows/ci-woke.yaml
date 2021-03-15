@@ -47,6 +47,7 @@ jobs:
         with:
           PATTERNS: |
             docs/**/*.md
+          FILES: docs/src/learn.md
 
       - name: GitStatus
         run: |
