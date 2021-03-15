@@ -38,7 +38,7 @@ jobs:
 
       - name: Create File 
         run: |
-          echo "##This is update contect New" > services/learn.md
+          echo "##This is update :::-> " > services/learn.md
           cp services/learn.md docs/src/learn.md
 
 
@@ -46,7 +46,7 @@ jobs:
         uses: technote-space/get-diff-action@v4
         with:
           PATTERNS: |
-            docs/src/learn.md
+            docs/**/*.md
 
       - name: GitStatus
         run: |
