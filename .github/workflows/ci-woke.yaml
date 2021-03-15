@@ -46,10 +46,10 @@ jobs:
         uses: technote-space/get-diff-action@v4
         with:
           PATTERNS: |
-            docs/*/*.md
+            services/*/*.yaml
           FILES: |
             docs/src/learn.md
-            services/demo/*.yaml
+            services/demo/de.yaml
 
       - name: GitStatus
         run: |
