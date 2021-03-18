@@ -13,7 +13,7 @@ jobs:
       matrix:
         node: [11, 12]
         os: [macos-latest, ubuntu-18.04]
-        experimental: [false]
+        experimental: [true]
         include:
           - node: 13
             os: ubuntu-18.04
