@@ -9,10 +9,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
     strategy:
-      max-parallel: 1
+      max-parallel: 20
       fail-fast: false
       matrix:
-        node: [11, 12]
+        node: [11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
         os: [macos-latest, ubuntu-18.04]
         experimental: [true]
         include:
@@ -25,4 +25,4 @@ jobs:
 
       - name: Sleep
         run: |
-          sleep 60
+          sleep 5
