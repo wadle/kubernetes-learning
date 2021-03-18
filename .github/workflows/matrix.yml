@@ -9,6 +9,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     continue-on-error: ${{ matrix.experimental }}
     strategy:
+      max-parallel: 1
       fail-fast: false
       matrix:
         node: [11, 12]
@@ -22,5 +23,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@0.10.0
+      - name: Sleep
+        run: |
+          sleep 60
