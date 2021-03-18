@@ -1,0 +1,20 @@
+name: 'ci-with-woke-spell'
+on:
+  - push
+jobs:
+
+  matrix:
+    
+    name: Run matrix
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [11, 12]
+        os: [macos-latest, ubuntu-18.04]
+        experimental: [false]
+        include:
+          - node: 13
+            os: ubuntu-18.04
+            experimental: truex
