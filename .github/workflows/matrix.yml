@@ -18,3 +18,9 @@ jobs:
           - node: 13
             os: ubuntu-18.04
             experimental: truex
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Spellcheck
+        uses: rojopolis/spellcheck-github-actions@0.10.0
