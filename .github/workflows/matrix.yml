@@ -1,4 +1,4 @@
-name: 'ci-with-woke-spell'
+name: 'ci-with-spellcheck'
 on:
   - push
 jobs:
