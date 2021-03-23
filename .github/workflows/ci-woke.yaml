@@ -26,6 +26,24 @@ jobs:
         run: |
           echo ${{ env.GIT }} 
           echo $( echo ${{ github.ref }} | sed s/^v// )
+          echo $( echo ${{ github.ref }}
+
+      - name: Checkout community-operators
+        uses: actions/checkout@v2
+        with:
+          repository: operator-framework/community-operators
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup env
+        run: |
+          echo "OH_BUNDLE_DIR=$(pwd)/upstream-community-operators/cloud-native-postgresql" >> $GITHUB_ENV
+          echo "OH_BUNDLE_VERSION=$( echo ${{ github.ref }} | sed s/^v// )" >> $GITHUB_ENV
+
+      - name: showGITHUB_ENV
+        run: |
+          echo ${{ env.GITHUB_ENV }}
+
   
   # With-Python:
 
