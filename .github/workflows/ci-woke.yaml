@@ -24,25 +24,25 @@ jobs:
 
       - name: demo123
         run: |
-          echo github.event_name
+          echo $ {{ github.event_name }}
 
-  With-Python:
+  # With-Python:
 
-    name: pythonScripts
+  #   name: pythonScripts
 
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up Python 3.7
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.7
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Set up Python 3.7
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: 3.7
 
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
+  #     - name: Display Python version
+  #       run: python -c "import sys; print(sys.version)"
 
-      - name: getRef
-        run: |
-          python -c "print('github.ref', github.ref)"
+  #     - name: getRef
+  #       run: |
+  #         python -c "print('github.ref', github.ref)"
 
 
 
