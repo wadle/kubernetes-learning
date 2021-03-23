@@ -20,7 +20,7 @@ jobs:
           fail-on-error: true
       - name: demo123
         env:
-          GIT : github.event_name
+          GIT : $ {{ github.event_name }}
         run: |
           echo $GIT
 
