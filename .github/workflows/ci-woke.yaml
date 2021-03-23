@@ -25,18 +25,8 @@ jobs:
           GIT : ${{ github.event_name }}
         run: |
           echo ${{ env.GIT }} 
-      
-      - name: Checkout community-operators
-        uses: actions/checkout@v2
-        with:
-          repository: operator-framework/community-operators
-          fetch-depth: 0
-          persist-credentials: false
-      - name: GetFileDetails
-        run: |
-          pwd
-          ls -ltr
-
+          echo $( echo ${{ github.ref }} | sed s/^v// )
+  
   # With-Python:
 
   #   name: pythonScripts
