@@ -6,6 +6,8 @@ jobs:
   Woke:
     
     name: Run woke
+    if: github.event_name == 'push'
+    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,62 +21,62 @@ jobs:
 
       - name: demo123
         run: |
-          echo ${{github.event.client_payload.repository}}
+          echo github.event_name
 
 
-  Spellcheck:
+  # Spellcheck:
     
-    name: Run spellcheck
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  #   name: Run spellcheck
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Spellcheck
-        uses: rojopolis/spellcheck-github-actions@0.10.0
+  #     - name: Spellcheck
+  #       uses: rojopolis/spellcheck-github-actions@0.10.0
 
-  CheckFileChanges:
-    name: Run docChanges
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+  # CheckFileChanges:
+  #   name: Run docChanges
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
 
-      - name: Create File 
-        run: |
-          echo "##This is update :::-> " > services/learn.md
-          cp services/learn.md docs/src/learn.md
-
-
-      - name: git-diff-command
-        run: |
-          git diff
+  #     - name: Create File 
+  #       run: |
+  #         echo "##This is update :::-> " > services/learn.md
+  #         cp services/learn.md docs/src/learn.md
 
 
-      - name: GitDiff
-        uses: technote-space/get-diff-action@v4
-        with:
-          PATTERNS: |
-            services/*/*.yaml
-          FILES: |
-            docs/src/learn.md
-            services/demo/de.yaml
-
-      - name: GitStatus
-        run: |
-          git status
-          gitsts_output=$(git status -s)
-          echo $gitsts_output
-          SUB='docs/src/learn.md'
-          if [[ "$gitsts_output" == *"$SUB"* ]]; then
-            echo "learn md file has been changes need to update"
-            exit 1
-          fi
+  #     - name: git-diff-command
+  #       run: |
+  #         git diff
 
 
-      - name: FilesChanged
-        run: |
-          echo "This is GitDiff is observed"
-          exit 1
-        if: env.GIT_DIFF
+  #     - name: GitDiff
+  #       uses: technote-space/get-diff-action@v4
+  #       with:
+  #         PATTERNS: |
+  #           services/*/*.yaml
+  #         FILES: |
+  #           docs/src/learn.md
+  #           services/demo/de.yaml
+
+  #     - name: GitStatus
+  #       run: |
+  #         git status
+  #         gitsts_output=$(git status -s)
+  #         echo $gitsts_output
+  #         SUB='docs/src/learn.md'
+  #         if [[ "$gitsts_output" == *"$SUB"* ]]; then
+  #           echo "learn md file has been changes need to update"
+  #           exit 1
+  #         fi
+
+
+  #     - name: FilesChanged
+  #       run: |
+  #         echo "This is GitDiff is observed"
+  #         exit 1
+  #       if: env.GIT_DIFF
 
