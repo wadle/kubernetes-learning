@@ -24,7 +24,7 @@ jobs:
 
       - name: demo123
         run: |
-          echo $ {{ github.event_name }}
+          echo ${github.event_name}
 
   # With-Python:
 
