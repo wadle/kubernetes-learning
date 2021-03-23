@@ -18,11 +18,11 @@ jobs:
         with:
           # Cause the check to fail on any broke rules
           fail-on-error: true
-      - name: demo123
-        env:
-          GIT : $ {{ github.event_name }}
-        run: |
-          echo $GIT
+      - name: Explain why this job ran
+        uses: monacorp/action-name@main
+        with:
+          entrypoint: /bin/echo
+          args: The ${{ github.event_name }} event triggered this step.
 
   # With-Python:
 
