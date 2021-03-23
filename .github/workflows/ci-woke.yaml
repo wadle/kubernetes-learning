@@ -7,24 +7,20 @@ jobs:
     
     name: Run woke
     if: github.event_name == 'push'
-
-
+    env:
+        GIT : github.event_name
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-
-
       - name: woke
         uses: get-woke/woke-action@v0
         with:
           # Cause the check to fail on any broke rules
           fail-on-error: true
-
       - name: demo123
         run: |
-          echo ${github.event_name}
+          echo $GIT
 
   # With-Python:
 
