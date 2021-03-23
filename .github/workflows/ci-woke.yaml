@@ -6,8 +6,8 @@ jobs:
   Woke:
     
     name: Run woke
-    if: github.event_name == 'pull'
-
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
