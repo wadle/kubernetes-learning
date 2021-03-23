@@ -6,8 +6,8 @@ jobs:
   Woke:
     
     name: Run woke
-    if: github.event_name == 'push'
-    
+    if: github.event_name == 'pull'
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
