@@ -1,4 +1,4 @@
-name: 'ci-with-woke-spell'
+name: 'ci-woke'
 on:
   push:
   workflow_dispatch:
