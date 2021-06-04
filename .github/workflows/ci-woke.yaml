@@ -45,7 +45,7 @@ jobs:
           echo ${{ env.GIT }} 
           echo $( echo ${{ github.ref }} | sed s/^v// )
           echo $( echo ${{ github.ref }} )
-      - name: failure-${{ github.run_id }}
+      - name: failure-${{ github.workflow }}
         run: |
           echo "Hello Failed name"
 
