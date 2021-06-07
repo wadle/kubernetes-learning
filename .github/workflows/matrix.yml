@@ -1,31 +1,31 @@
-name: 'ci-with-spellcheck'
-on:
-  - push
-jobs:
+# name: 'ci-with-spellcheck'
+# on:
+#   - push
+# jobs:
 
-  matrix:
+#   matrix:
     
-    name: Run matrix
-    runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        version:
-          - A-4.5
-          - B-4.6
-          - C-4.7
-        name:
-          - demo
-          - demo-advance
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Passed
-        run: |
-          exit 0 
-      - name: Archive fail
-        if: failure()
-        uses: actions/upload-artifact@v2
-        with:
-          name: fail-${{ matrix.version }}-${{ matrix.name }}
-          path: |
-            docs/src/
+#     name: Run matrix
+#     runs-on: ubuntu-20.04
+#     strategy:
+#       matrix:
+#         version:
+#           - A-4.5
+#           - B-4.6
+#           - C-4.7
+#         name:
+#           - demo
+#           - demo-advance
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: Passed
+#         run: |
+#           exit 0 
+#       - name: Archive fail
+#         if: failure()
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: fail-${{ matrix.version }}-${{ matrix.name }}
+#           path: |
+#             docs/src/

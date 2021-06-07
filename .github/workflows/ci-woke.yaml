@@ -1,130 +1,130 @@
-name: 'ci-woke'
-on:
-  push:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: 'Person to greet'
-        required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
+# name: 'ci-woke'
+# on:
+#   push:
+#   workflow_dispatch:
+#     inputs:
+#       name:
+#         description: 'Person to greet'
+#         required: true
+#         default: 'Mona the Octocat'
+#       home:
+#         description: 'location'
+#         required: false
+#         default: 'The Octoverse'
 
-jobs:
+# jobs:
 
-  say_hello:
-    runs-on: ubuntu-latest
-    steps:
-    - run: |
-        echo "Hello ${{ github.event.inputs.name }}!"
-        echo "- in ${{ github.event.inputs.home }}!"
+#   say_hello:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - run: |
+#         echo "Hello ${{ github.event.inputs.name }}!"
+#         echo "- in ${{ github.event.inputs.home }}!"
 
-  Woke:
+#   Woke:
     
-    name: Run woke
-    if: github.event_name == 'push'
+#     name: Run woke
+#     if: github.event_name == 'push'
 
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
 
-      - name: woke
-        uses: get-woke/woke-action@v0
-        with:
-          # Cause the check to fail on any broke rules
-          fail-on-error: true
+#       - name: woke
+#         uses: get-woke/woke-action@v0
+#         with:
+#           # Cause the check to fail on any broke rules
+#           fail-on-error: true
 
-          # ENV example
-      - name: demo123
-        env:
-          GIT : ${{ github.event_name }}
-        run: |
-          echo ${{ env.GIT }} 
-          echo $( echo ${{ github.ref }} | sed s/^v// )
-          echo $( echo ${{ github.ref }} )
-      - name: failure-${{ github.job.name }}
-        run: |
-          echo "Hello Failed name"
+#           # ENV example
+#       - name: demo123
+#         env:
+#           GIT : ${{ github.event_name }}
+#         run: |
+#           echo ${{ env.GIT }} 
+#           echo $( echo ${{ github.ref }} | sed s/^v// )
+#           echo $( echo ${{ github.ref }} )
+#       - name: failure-${{ github.job.name }}
+#         run: |
+#           echo "Hello Failed name"
 
 
   
-  # With-Python:
+#   # With-Python:
 
-  #   name: pythonScripts
+#   #   name: pythonScripts
 
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Set up Python 3.7
-  #       uses: actions/setup-python@v2
-  #       with:
-  #         python-version: 3.7
+#   #   runs-on: ubuntu-latest
+#   #   steps:
+#   #     - name: Set up Python 3.7
+#   #       uses: actions/setup-python@v2
+#   #       with:
+#   #         python-version: 3.7
 
-  #     - name: Display Python version
-  #       run: python -c "import sys; print(sys.version)"
+#   #     - name: Display Python version
+#   #       run: python -c "import sys; print(sys.version)"
 
-  #     - name: getRef
-  #       run: |
-  #         python -c "print('github.ref', github.ref)"
-
-
+#   #     - name: getRef
+#   #       run: |
+#   #         python -c "print('github.ref', github.ref)"
 
 
-  # Spellcheck:
+
+
+#   # Spellcheck:
     
-  #   name: Run spellcheck
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
+#   #   name: Run spellcheck
+#   #   runs-on: ubuntu-latest
+#   #   steps:
+#   #     - name: Checkout
+#   #       uses: actions/checkout@v2
 
-  #     - name: Spellcheck
-  #       uses: rojopolis/spellcheck-github-actions@0.10.0
+#   #     - name: Spellcheck
+#   #       uses: rojopolis/spellcheck-github-actions@0.10.0
 
-  # CheckFileChanges:
-  #   name: Run docChanges
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
+#   # CheckFileChanges:
+#   #   name: Run docChanges
+#   #   runs-on: ubuntu-latest
+#   #   steps:
+#   #     - name: Checkout
+#   #       uses: actions/checkout@v2
 
-  #     - name: Create File 
-  #       run: |
-  #         echo "##This is update :::-> " > services/learn.md
-  #         cp services/learn.md docs/src/learn.md
-
-
-  #     - name: git-diff-command
-  #       run: |
-  #         git diff
+#   #     - name: Create File 
+#   #       run: |
+#   #         echo "##This is update :::-> " > services/learn.md
+#   #         cp services/learn.md docs/src/learn.md
 
 
-  #     - name: GitDiff
-  #       uses: technote-space/get-diff-action@v4
-  #       with:
-  #         PATTERNS: |
-  #           services/*/*.yaml
-  #         FILES: |
-  #           docs/src/learn.md
-  #           services/demo/de.yaml
-
-  #     - name: GitStatus
-  #       run: |
-  #         git status
-  #         gitsts_output=$(git status -s)
-  #         echo $gitsts_output
-  #         SUB='docs/src/learn.md'
-  #         if [[ "$gitsts_output" == *"$SUB"* ]]; then
-  #           echo "learn md file has been changes need to update"
-  #           exit 1
-  #         fi
+#   #     - name: git-diff-command
+#   #       run: |
+#   #         git diff
 
 
-  #     - name: FilesChanged
-  #       run: |
-  #         echo "This is GitDiff is observed"
-  #         exit 1
-  #       if: env.GIT_DIFF
+#   #     - name: GitDiff
+#   #       uses: technote-space/get-diff-action@v4
+#   #       with:
+#   #         PATTERNS: |
+#   #           services/*/*.yaml
+#   #         FILES: |
+#   #           docs/src/learn.md
+#   #           services/demo/de.yaml
+
+#   #     - name: GitStatus
+#   #       run: |
+#   #         git status
+#   #         gitsts_output=$(git status -s)
+#   #         echo $gitsts_output
+#   #         SUB='docs/src/learn.md'
+#   #         if [[ "$gitsts_output" == *"$SUB"* ]]; then
+#   #           echo "learn md file has been changes need to update"
+#   #           exit 1
+#   #         fi
+
+
+#   #     - name: FilesChanged
+#   #       run: |
+#   #         echo "This is GitDiff is observed"
+#   #         exit 1
+#   #       if: env.GIT_DIFF
 
