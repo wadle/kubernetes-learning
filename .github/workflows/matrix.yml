@@ -1,28 +1,32 @@
-# name: 'ci-with-spellcheck'
-# on:
-#   - push
-# jobs:
+name: 'ci-with-spellcheck'
+on:
+  - push
+jobs:
 
-#   matrix:
+  matrix:
     
-#     name: Run matrix
-#     runs-on: ${{ matrix.os }}
-#     continue-on-error: ${{ matrix.experimental }}
-#     strategy:
-#       max-parallel: 20
-#       fail-fast: false
-#       matrix:
-#         node: [11]
-#         os: [macos-latest, ubuntu-18.04]
-#         experimental: [true]
-#         # include:
-#         #   - node: 13
-#         #     os: ubuntu-18.04
-#         #     experimental: true
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v2
+    name: Run matrix
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        version:
+          - A-4.5
+          - B-4.6
+          - C-4.7
+        name:
+          - demo
+          - demo-advance
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-#       - name: Sleep
-#         run: |
-#           sleep 1
+      - name: Failed
+        run: |
+          exit 1 
+      - name: Archive fail
+        if: failure()
+        uses: actions/upload-artifact@v2
+        with:
+          name: fail-${{ matrix.version }}-${{ matrix.name }}
+          path: |
+            /temp/
