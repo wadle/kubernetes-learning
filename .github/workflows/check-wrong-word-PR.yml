@@ -17,8 +17,8 @@ jobs:
       #       description: 'Absolute path to the mount point where the build space will be available, defaults to $GITHUB_WORKSPACE if unset.'
       #       required: false
       
-      - name: Cleanup disk
-        uses: curoky/cleanup-disk-action@v2.0
+      # - name: Cleanup disk
+      #   uses: curoky/cleanup-disk-action@v2.0
 
       - name: Checkout
         uses: actions/checkout@v2
