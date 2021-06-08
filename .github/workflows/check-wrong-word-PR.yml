@@ -21,4 +21,9 @@ jobs:
         run: |
           echo "Free space:"  
           df -h
+      - name: DockerImages
+        run: |
+          docker images
+          docker ps -a
+          
     
