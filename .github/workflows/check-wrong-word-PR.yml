@@ -25,5 +25,9 @@ jobs:
         run: |
           docker images
           docker ps -a
-          
-    
+
+      - name: Remove-Docker-images
+        run: |
+          docker rmi -f 9ff95a467e45 81bcf752ac3d acf04b8ccc37 e389ae589224 13621d1b12d4 
+          docker images
+          docker ps -a
